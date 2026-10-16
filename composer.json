@@ -1,0 +1,59 @@
+{
+    "name": "x-laravel/federated-identity",
+    "description": "Verify Google, Apple and any OpenID Connect ID token sent from mobile and single-page apps, and link it to a Laravel account safely.",
+    "type": "library",
+    "license": "MIT",
+    "keywords": ["laravel", "social login", "federated identity", "google", "apple", "sign in with apple", "openid connect", "oidc", "id token", "jwt"],
+    "authors": [
+        {
+            "name": "Mehmet ÖĞMEN",
+            "email": "www@mehmetogmen.com.tr",
+            "homepage": "https://www.mehmetogmen.com.tr",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.3",
+        "ext-openssl": "*",
+        "firebase/php-jwt": "^7.0",
+        "guzzlehttp/guzzle": "^7.8",
+        "illuminate/contracts": "^12.0 || ^13.0",
+        "illuminate/database": "^12.0 || ^13.0",
+        "illuminate/http": "^12.0 || ^13.0",
+        "illuminate/support": "^12.0 || ^13.0"
+    },
+    "require-dev": {
+        "larastan/larastan": "^3.0",
+        "orchestra/testbench": "^10.0 || ^11.0",
+        "phpunit/phpunit": "^11.5 || ^12.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "XLaravel\\FederatedIdentity\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "XLaravel\\FederatedIdentity\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "XLaravel\\FederatedIdentity\\FederatedIdentityServiceProvider"
+            ],
+            "aliases": {
+                "FederatedIdentity": "XLaravel\\FederatedIdentity\\Facades\\FederatedIdentity"
+            }
+        }
+    },
+    "scripts": {
+        "analyse": "phpstan analyse",
+        "test": "phpunit"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
